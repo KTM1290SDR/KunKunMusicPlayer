@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "musicList": [{
+      "id": "1",
+      "name": "有何不可",
+      "singer": "许嵩",
+      "album": "自定义",
+      "url": "@/assets/music/许嵩 - 有何不可.mp3",
+      "cover": "@/assets/img/musicImg/有何不可.jpg"
+    },
+    {
+      "id": "2",
+      "name": "刚刚好",
+      "singer": "薛之谦",
+      "album": "初学者",
+      "url": "@/assets/music/薛之谦 - 刚刚好.mp3",
+      "cover": "@/assets/music/刚刚好.jpg"
+    },
+    {
+      "id": "3",
+      "name": "幻听",
+      "singer": "许嵩",
+      "album": "梦游计",
+      "url": "@/assets/music/许嵩 - 幻听.mp3",
+      "cover": "@/assets/music/幻听.jpg"
+    },
+    {
+      "id": "4",
+      "name": "绅士",
+      "singer": "薛之谦",
+      "album": "绅士",
+      "url": "@/assets/music/薛之谦 - 绅士.mp3",
+      "cover": "@/assets/music/绅士.jpg"
+    }
+  ]
+}

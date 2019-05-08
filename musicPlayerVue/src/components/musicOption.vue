@@ -30,6 +30,24 @@
             </div>
             <span>添加</span>
           </div>
+              <div class="op-item">
+            <div>
+              <img src="@/assets/icon/下载 (1).png" alt>
+            </div>
+            <span>下载</span>
+          </div>
+              <div class="op-item">
+            <div>
+              <img src="@/assets/icon/评论 (2).png" alt>
+            </div>
+            <span>评论</span>
+          </div>
+              <div class="op-item">
+            <div>
+              <img src="@/assets/icon/视频 (3).png" alt>
+            </div>
+            <span>播放MV</span>
+          </div>
         </div>
         <div class="option-volume"></div>
         <div @click="ShowOption" class="option-bottom">

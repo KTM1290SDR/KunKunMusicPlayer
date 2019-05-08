@@ -57,6 +57,13 @@ export default new Router({
           // eslint-disable-next-line import/no-unresolved
           component: () => import('@/views/singer.vue'),
         },
+        {
+          // 今日推荐
+          path: 'todayMusic',
+          name: 'todayMusic',
+          // eslint-disable-next-line import/no-unresolved
+          component: () => import('@/views/todayMusic.vue'),
+        },
       ],
     },
   ],

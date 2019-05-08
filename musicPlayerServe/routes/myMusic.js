@@ -105,6 +105,7 @@ router.post("/singlesinger", (req, res, next) => {
    
 
 })
+//获取专辑对应音乐
 router.post("/ademSong",(req,res,next)=>{
     let ademInfo={adem:{},ademMusic:[]};
     let ademId=req.body.ademId;
@@ -122,6 +123,17 @@ router.post("/ademSong",(req,res,next)=>{
                     console.log(err)
                 }
             })
+        }else {
+            console.log(err)
+        }
+    })
+});
+
+router.get("/todayMusic",(req,res)=>{
+    const sqlSelectTodayMusic='SELECT * FROM music,singer,adem WHERE music.musicAdemId=adem.ademId AND singer.singerId=music.musicSingerId and adem.ademSingerId=singer.singerId  ORDER BY  RAND() LIMIT 10'
+    connection.query(sqlSelectTodayMusic,(err,data)=>{
+        if (!err) {
+            res.send(data)
         }else {
             console.log(err)
         }

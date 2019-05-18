@@ -65,16 +65,6 @@ export default {
           this.singerList = res.data;
         });
     },
-    //跳转到歌手详情页并且传递歌手id
-    // goSingerpage(singer) {
-    //   console.log(singer);
-    //   this.$router.push({
-    //     name: "singer",
-    //     params: {
-    //       singer: singer
-    //     }
-    //   });
-    // },
     //获取歌手列表
     getSingerInfo() {
       this.axios.get("/api/myMusic/singer").then(res => {

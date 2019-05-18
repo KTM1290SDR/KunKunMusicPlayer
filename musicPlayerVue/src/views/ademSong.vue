@@ -1,6 +1,6 @@
 <template>
   <div class="ademSong">
-    <navTop title="大小说家"></navTop>
+    <navTop title="专辑详情"></navTop>
     <div class="adem-box">
       <div class="black"></div>
       <img :src="ademInfo.adem.ademImgSrc" alt>
@@ -68,6 +68,7 @@ export default {
     justify-content: space-evenly;
     .adem-info {
       height: 150px;
+          width: 40vw;
       color: rgba(255, 255, 255, 0.774);
       > div:nth-child(1) {
         font-size: 16px;

@@ -2,7 +2,7 @@
   <div class="myMusic">
     <div class="user-top">
       <div class="head-portrait">
-        <img src="@/assets/adem/timg.png" alt>
+        <img src="/api/assets/timg.jpg" alt>
       </div>
       <div class="user-name">许宇轩</div>
     </div>

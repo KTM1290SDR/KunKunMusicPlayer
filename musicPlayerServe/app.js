@@ -39,7 +39,10 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-app.listen(888,(res,req)=>{
+// app.listen(888,"192.168.43.79",(res,req)=>{
+  // app.listen(888,"10.0.160.107",(res,req)=>{
+  app.listen(888,(res,req)=>{ 
   console.log("服务器已启动...")
-})
+});
+app.use(express.static('public'))
 module.exports = app;

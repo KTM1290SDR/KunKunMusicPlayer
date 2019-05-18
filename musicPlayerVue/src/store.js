@@ -78,6 +78,7 @@ export default new Vuex.Store({
       } // cover: '@/assets/adem/绅士.jpg',  
     },
     proBarLen: 0,
+    Vol:50
   },
   getters: {},
   mutations: {

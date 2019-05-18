@@ -15,8 +15,8 @@
     <div class="bbg"></div>
     <div class="masking"></div>
     <div class="play-top">
-      <span class="come-back" @click="showPlaying">
-        <i class="el-icon-arrow-down"></i>
+      <span class="come-back" >
+        <i @click="showPlaying" class="el-icon-arrow-down"></i>
       </span>
       <div class="music-info-play">
         <div>{{playingMusic.music.musicName}}</div>
@@ -87,7 +87,9 @@ export default {
   watch: {
     isPlay: "playMusicing",
     playingMusic: "playMusic",
-    proBarLen: "cycle"
+    proBarLen: "cycle",
+    Vol:"changeVoll",
+    playingMusicId:"musicPopUp"
   },
   computed: {
     //改变正在播放的音乐
@@ -96,6 +98,9 @@ export default {
     },
     playingMusic() {
       return this.$store.state.playingMusic;
+    },
+     playingMusicId() {
+      return this.$store.state.playingMusic.music.musicId;
     },
     ishidden() {
       return this.$store.state.onOff.ishidden;
@@ -108,7 +113,10 @@ export default {
     },
     cycleWay() {
       return this.$store.state.cycleWay;
-    }
+    },
+    Vol(){
+      return this.$store.state.Vol;
+    },
   },
   data() {
     return {
@@ -135,11 +143,19 @@ export default {
     }
   },
   methods: {
+    changeVoll(){
+      let vol=((this.Vol)/100).toFixed(1)
+       
+         this.$refs.audio.volume=vol
+        
+        // console.log(this.$refs.audio.volume)
+    },
     //播放结束切换歌曲
     cycle() {
       if (this.proBarLen >= 100) {
         if (this.cycleWay == 1 || this.playingMusicListArr.length <= 1) {
           this.$refs.audio.load();
+          this.musicPopUp()
         } else {
           this.switchMusic(true);
         }
@@ -149,6 +165,7 @@ export default {
       this.$store.state.onOff.isShowOption=true;
       console.log(this.$store.state.playingMusic)
        this.$store.state.thisSelectMusic=this.$store.state.playingMusic.music;
+    console.log(this.$store.state.thisSelectMusic)
     },
     ShowPlayingMusicList(){
        this.$store.commit("ShowPlayingMusicList");
@@ -210,6 +227,9 @@ export default {
     },
     changeCycleWay() {
       this.$store.commit("changeCycleWay");
+    },
+    musicPopUp(){
+      this.axios.post("/api/myMusic/musicPopUp",{musicId:this.playingMusicId,singerId:this.playingMusic.music.singerId})
     },
     playMusicing() {
       if (!this.isPlay) {

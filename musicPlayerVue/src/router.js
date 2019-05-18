@@ -57,6 +57,27 @@ export default new Router({
           // eslint-disable-next-line import/no-unresolved
           component: () => import('@/views/singer.vue'),
         },
+        {
+          // 今日推荐
+          path: 'todayMusic',
+          name: 'todayMusic',
+          // eslint-disable-next-line import/no-unresolved
+          component: () => import('@/views/todayMusic.vue'),
+        },
+        {
+          // 排行榜
+          path: 'rinkList',
+          name: 'rinkList',
+          // eslint-disable-next-line import/no-unresolved
+          component: () => import('@/views/rinkList.vue'),
+        },
+        {
+          // 排行榜单页
+          path: 'rinkPage',
+          name: 'rinkPage',
+          // eslint-disable-next-line import/no-unresolved
+          component: () => import('@/views/rinkPage.vue'),
+        },
       ],
     },
   ],

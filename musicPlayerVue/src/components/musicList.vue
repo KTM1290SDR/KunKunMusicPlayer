@@ -58,7 +58,7 @@ export default {
       if (this.isPlay == false) {
         this.$store.state.onOff.isPlay = true;
       }
-      // console.log(this.$store.state.playingMusic)
+      console.log(this.$store.state.playingMusic)
       this.$store.state.playingMusicListArr = this.musicListArr;
       //  this.$store.commit("playMusic");
       // console.log(this.$store.state.onOff.isPlay);

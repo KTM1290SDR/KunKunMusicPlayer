@@ -31,7 +31,7 @@
           <span>歌手</span>
         </div>
       </router-link>
-      <router-link to>
+      <router-link to='/rinkList'>
         <div class="item">
           <img src="@/assets/排行榜.png" alt>
           <span>排行</span>
@@ -49,7 +49,7 @@
           <span>一起听</span>
         </div>
       </router-link>
-      <router-link to>
+      <router-link to="/todayMusic">
         <div class="item">
           <img src="@/assets/推荐.png" alt>
           <span>今日推荐</span>

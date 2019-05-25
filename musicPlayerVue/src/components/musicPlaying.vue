@@ -123,9 +123,7 @@ export default {
       durationTime: 0,
       elapsedTime: 0,
       circulationType: true,
-      isLike: false,
-      coverImgUrl:
-        "//y.gtimg.cn/music/photo_new/T001R150x150M000002nXp292LIOGV.jpg?max_age=2592000"
+      isLike: false
     };
   },
   filters: {

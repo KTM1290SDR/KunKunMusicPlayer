@@ -40,7 +40,8 @@ export default {
   methods: {
     getRinkList() {
       this.axios
-        .post("/api/myMusic/rinkList", { rinkType: this.$route.query.rinkType })
+        // .post("/api/myMusic/rinkList", { rinkType: this.$route.query.rinkType })
+        .post("https://192.168.43.79:777/myMusic/rinkList", { rinkType: this.$route.query.rinkType })
         .then(res => {
         //   console.log(res.data);
           this.musicListArr = res.data;

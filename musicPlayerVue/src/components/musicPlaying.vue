@@ -227,7 +227,8 @@ export default {
       this.$store.commit("changeCycleWay");
     },
     musicPopUp(){
-      this.axios.post("/api/myMusic/musicPopUp",{musicId:this.playingMusicId,singerId:this.playingMusic.music.singerId})
+      // this.axios.post("/api/myMusic/musicPopUp",{musicId:this.playingMusicId,singerId:this.playingMusic.music.singerId})
+      this.axios.post("https://192.168.43.79:777/myMusic/musicPopUp",{musicId:this.playingMusicId,singerId:this.playingMusic.music.singerId})
     },
     playMusicing() {
       if (!this.isPlay) {

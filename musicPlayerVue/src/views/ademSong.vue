@@ -43,7 +43,8 @@ export default {
   methods:{
     getAdemMusic(){
       let ademId=this.$route.query.ademId;
-      this.axios.post("/api/myMusic/ademSong",{ademId:ademId}).then(res=>{
+      // this.axios.post("/api/myMusic/ademSong",{ademId:ademId}).then(res=>{
+    this.axios.post("https://192.168.43.79:777/myMusic/ademSong",{ademId:ademId}).then(res=>{
         console.log(res.data)
         this.ademInfo=res.data
         this.ademInfo.ademMusic=JSON.parse(JSON.stringify(this.ademInfo.ademMusic))

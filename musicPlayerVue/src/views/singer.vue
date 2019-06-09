@@ -69,7 +69,8 @@ export default {
     getSingerInfo() {
       let singerId = this.$route.query.singerId;
       this.axios
-        .post("/api/myMusic/singlesinger", { singerId: singerId })
+        // .post("/api/myMusic/singlesinger", { singerId: singerId })
+        .post("https://192.168.43.79:777/myMusic/singlesinger", { singerId: singerId })
         .then(res => {
           this.singerInfo = res.data;
           console.log(this.singerInfo);

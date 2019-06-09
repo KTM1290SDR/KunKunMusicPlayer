@@ -1,6 +1,6 @@
 <template>
   <div class="todayMusic">
-    <navTop title="今日推荐"></navTop>
+    <navTop title="每日推荐"></navTop>
     <div class="today-top">
       <div class="today-img">
           <img :src="todayMusicList[0].ademImgSrc" alt="">
@@ -39,7 +39,8 @@ export default {
   },
   methods:{
       getTodayMusicList(){
-          this.axios.get("/api/MyMusic/todayMusic").then(res=>{
+          // this.axios.get("/api/MyMusic/todayMusic").then(res=>{
+            this.axios.get("https://192.168.43.79:777/MyMusic/todayMusic").then(res=>{
               this.todayMusicList=res.data
               console.log(res.data)
           })

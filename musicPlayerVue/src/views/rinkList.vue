@@ -58,8 +58,9 @@ export default {
   },
   methods:{
       getRinkData(){
-          this.axios.get('/api/myMusic/rinkData').then(res=>{
+          // this.axios.get('/api/myMusic/rinkData').then(res=>{
               //  console.log(res.data)
+              this.axios.get('https://192.168.43.79:777/myMusic/rinkData').then(res=>{
                this.RinkArr=res.data.rink1;
                this.placeRinkTypeArr[0].imgSrc=res.data.rink2.ademImgSrc;
                this.placeRinkTypeArr[1].imgSrc=res.data.rink3.ademImgSrc;

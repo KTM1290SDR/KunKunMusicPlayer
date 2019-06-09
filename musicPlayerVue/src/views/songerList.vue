@@ -56,7 +56,8 @@ export default {
   methods: {
     classify() {
       this.axios
-        .post("/api/myMusic/singerScreen", {
+        // .post("/api/myMusic/singerScreen", {
+          .post("https://192.168.43.79:777/myMusic/singerScreen", {
           place: this.place,
           gender: this.gender
         })
@@ -67,7 +68,8 @@ export default {
     },
     //获取歌手列表
     getSingerInfo() {
-      this.axios.get("/api/myMusic/singer").then(res => {
+      // this.axios.get("/api/myMusic/singer").then(res => {
+        this.axios.get("https://192.168.43.79:777/myMusic/singer").then(res => {
         // console.log(res.data);
         this.singerList = res.data;
       });

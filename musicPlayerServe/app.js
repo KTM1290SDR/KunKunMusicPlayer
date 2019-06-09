@@ -4,12 +4,20 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var fs = require('fs');
+var https = require('https');
+var privateKey  = fs.readFileSync('./private.pem', 'utf8');
+var certificate = fs.readFileSync('./file.crt', 'utf8');
+var credentials = {key: privateKey, cert: certificate};
+
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var myMusicRouter = require('./routes/myMusic');
 
 var app = express();
-
+var httpsServer = https.createServer(credentials, app);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -40,9 +48,14 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 // app.listen(888,"192.168.43.79",(res,req)=>{
-  // app.listen(888,"10.0.160.107",(res,req)=>{
-  app.listen(888,(res,req)=>{ 
-  console.log("服务器已启动...")
+//   // app.listen(888,"10.0.34.39",(res,req)=>{
+//   // app.listen(888,(res,req)=>{ 
+//   console.log("服务器已启动...")
+// });
+
+httpsServer.listen(777,"192.168.43.79", ()=> {
+  console.log('https服务器启动');
 });
+
 app.use(express.static('public'))
 module.exports = app;
